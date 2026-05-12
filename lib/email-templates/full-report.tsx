@@ -38,15 +38,20 @@ export function FullReportEmail({
   const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
   const link = `${appUrl}/audit/${auditId}`;
 
+  const previewText = `Твой Severity Score: ${report.severity_score}/100`;
+
   return (
     <Html lang="ru">
       <Head />
-      <Preview>Твой Severity Score: {report.severity_score}/100</Preview>
+      <Preview>{previewText}</Preview>
       <Body style={main}>
         <Container style={container}>
           <Heading style={h1}>Аудит готов</Heading>
           <Text style={text}>
-            Severity Score: <strong>{report.severity_score}/100</strong>
+            Severity Score:{" "}
+            <strong>
+              {String(report.severity_score)}/100
+            </strong>
           </Text>
           <Text style={text}>{report.estimated_impact}</Text>
           <Hr style={hr} />
