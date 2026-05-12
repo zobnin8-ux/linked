@@ -9,7 +9,7 @@ import {
   Preview,
   Section,
   Text,
-} from "@react-email/components";
+} from "react-email";
 import type { ReactElement } from "react";
 import type { FullReport, Insight } from "@/types/audit";
 
